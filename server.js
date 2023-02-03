@@ -7,7 +7,8 @@ import cors from 'cors'
 import dotenv from 'dotenv'
 import cookieParser from 'cookie-parser'
 import corsOptions from './utils/cors.js'
-import authRouter from "./controllers/auth.js"
+import authRouter from './controllers/auth.js'
+import testRouter from './controllers/test.js'
 
 dotenv.config()
 const app = express()
@@ -26,6 +27,7 @@ app.get("/", (req, res) => {
     res.send("It lives")
 })
 app.use("/auth", authRouter)
+app.use("/test", testRouter)
 
 ///////////////////////////
 // Server Listener
